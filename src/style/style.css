@@ -1,0 +1,357 @@
+body {
+    color: #313131;
+    background-color: #E8EAEA;
+    text-align: center;
+    font-family: Helvetica;
+    padding-top: 2em;
+    padding-left: 3em;
+    padding-right: 3em;
+}
+
+h3 {
+    font-size: 1.4em;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
+
+h4 {
+    font-size: 1em;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+    position: relative;
+    right: 16%;
+}
+
+p {
+    margin: 1em auto 1em auto;
+    color: #4a4b4b;
+    font-style: italic;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+}
+
+hr {
+    opacity: 0.40;
+}
+
+/*** For header ***/
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    border-radius: 30px;
+    padding: 1px 10%;
+}
+
+header::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+header img {
+    float: left;
+    width: 40px;
+    margin: 10px;
+}
+
+.logo {
+    float: left;
+    padding: 10px 0;
+}
+
+.menu {
+    float: right;
+}
+
+.menu .ulmenu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu .limenu {
+    display: inline-block;
+    margin-left: 70px;
+    padding-top: 23px;
+    position: relative;
+}
+
+.menu .amenu {
+    color: #444;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.menu .amenu:hover {
+    color: #000;
+}
+
+.menu .amenu::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background-color: #444;
+    position: absolute;
+    top: 0;
+    width: 0%;
+    transition: all ease-in-out 250ms;
+}
+
+.menu .amenu:hover::before {
+    width: 100%;
+}
+
+/*** For select with map ***/
+
+.choix {
+    float: right;
+    width: 45%
+}
+
+/* For map */
+path {
+    fill: #0CA3A2;
+    stroke: white;
+    stroke-width: 1px;
+    transition: fill 0.3s;
+}
+
+/* Mouse over color change */
+path:hover {
+    fill: #103666;
+    stroke: white;
+    stroke-width: 1px;
+    transition: fill 0.3s;
+}
+
+/*** Display of the weather result of the current day ***/
+
+.affichage {
+    width: 45%;
+    float: left;
+    background-color: rgba(181, 143, 135, 0.2);
+
+}
+
+/* For temperature information */
+.tempera {
+    font-size: 2em;
+}
+
+/* Div visibility and humidity */
+.div2 {
+    width: 33%;
+    float: left;
+}
+
+/* Div wind and pressure */
+.div3 {
+    width: 33%;
+    float: left;
+}
+
+/* Div sunrise and sunset */
+.div4 {
+    width: 33%;
+    float: left;
+}
+
+/*** Time display of weather days (detail information) ***/
+
+.uljour {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.listejour {
+    margin-left: 6px;
+    float: left;
+    /*pour IE*/
+}
+
+.uljour .listejour p {
+    display: block;
+    float: left;
+    width: 65px;
+    background-color: rgb(12, 163, 162, 0.7);
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 12px;
+    padding: 2px;
+    border: 2px solid;
+    /*pour avoir un effet "outset" avec IE :*/
+    border-color: #DCDCDC #696969 #696969 #DCDCDC;
+}
+
+/* Show next days container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* Weather display previous and next buttons */
+.precedent,
+.suivant {
+    cursor: pointer;
+    position: absolute;
+    top: 80%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Next button position */
+.suivant {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* Previous button position */
+
+.precedent {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* Passing on the buttons before and after */
+.precedent:hover,
+.suivant:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Slide numbering: (.../4) */
+.numeroslide {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    top: 55%;
+    position: absolute;
+}
+
+/* Slide indicators: circles */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+/* Animation when moving to the next slide */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/*** For footer ***/
+
+/* Fixing the footer at the bottom of the page */
+footer {
+    clear: both;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.infofooter {
+    float: left;
+}
+
+.infopj {
+    font-size: 12px;
+}
+
+/* Intended for social networks */
+
+.ulfooter {
+    position: relative;
+    right: 2.5%;
+}
+
+/* Personalization of bubbles */
+.fa {
+    padding: 15px;
+    font-size: 30px;
+    width: 20px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 40%;
+}
+
+.fa:hover {
+    opacity: 0.8;
+    transform: translateY(-8px);
+}
+
+/* Changing the colors specific to each of the media buttons */
+
+.fa-university {
+    background: #a4c639;
+    color: white;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-youtube {
+    background: #bb0000;
+    color: white;
+}
+
+.fa-instagram {
+    background: #125688;
+    color: white;
+}
